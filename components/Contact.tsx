@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const contacts = [
-  { label: "Projects", email: "hello@yourname.dev" },
-  { label: "Freelance", email: "work@yourname.dev" },
-  { label: "General", email: "hi@yourname.dev" },
+  { label: "Projects", email: "rightsortace@gmail.com" },
+  { label: "Freelance", email: "rightsortace@gmail.com" },
+  { label: "General", email: "rightsortace@gmail.com" },
 ];
 
 export default function Contact() {
@@ -64,10 +64,13 @@ export default function Contact() {
       {/* Social links */}
       <div className="flex flex-wrap gap-6">
         {[
+          {
+            label: "Fiverr",
+            href: "https://www.fiverr.com/rightsort/code-or-design-your-business-website-from-scratch?ref_ctx_id=ece88dfc1b4b4a68bdb02a4ee20bc6c6&pckg_id=1&source=seller_page",
+          },
           { label: "GitHub", href: "https://github.com" },
           { label: "LinkedIn", href: "https://linkedin.com" },
           { label: "Twitter / X", href: "https://twitter.com" },
-          { label: "Dribbble", href: "https://dribbble.com" },
         ].map((s) => (
           <a
             key={s.label}

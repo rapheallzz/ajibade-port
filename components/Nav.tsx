@@ -40,7 +40,7 @@ export default function Nav() {
           onClick={() => scrollTo("hero")}
           className="font-display text-bone text-xl tracking-tight hover:text-accent transition-colors duration-300"
         >
-          Your Name
+          Stephen A. Ibiotye
         </button>
 
         {/* Desktop links */}
@@ -124,11 +124,11 @@ export default function Nav() {
             </p>
             <button
               onClick={() =>
-                copyEmail("hello@yourname.dev", "email")
+                copyEmail("rightsortace@gmail.com", "email")
               }
               className="font-sans text-sm text-cloud hover:text-accent transition-colors duration-300"
             >
-              {copied === "email" ? "Copied!" : "hello@yourname.dev"}
+              {copied === "email" ? "Copied!" : "rightsortace@gmail.com"}
             </button>
           </div>
         </div>

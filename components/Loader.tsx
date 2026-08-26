@@ -52,7 +52,7 @@ export default function Loader({
       </div>
 
       <div className="font-mono text-xs text-fog tracking-widest uppercase">
-        Your Name — Portfolio
+        Stephen A. Ibiotye — Portfolio
       </div>
     </div>
   );
