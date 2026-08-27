@@ -2,59 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-
-const projects = [
-  {
-    num: "01",
-    title: "E-Commerce Platform",
-    tags: ["Next.js", "TypeScript", "Stripe"],
-    desc: "Full-stack storefront with real-time inventory, cart animations, and seamless checkout.",
-    year: "2025",
-    img: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80",
-    link: "#",
-    color: "#c8f542",
-  },
-  {
-    num: "02",
-    title: "Motion Design System",
-    tags: ["React", "Framer Motion", "Storybook"],
-    desc: "A component library with 60+ animated components and comprehensive design tokens.",
-    year: "2025",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    link: "#",
-    color: "#f5a623",
-  },
-  {
-    num: "03",
-    title: "Analytics Dashboard",
-    tags: ["React", "D3.js", "TailwindCSS"],
-    desc: "Real-time data visualisation platform processing 1M+ events with smooth 60fps charts.",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    link: "#",
-    color: "#9b59b6",
-  },
-  {
-    num: "04",
-    title: "3D Product Configurator",
-    tags: ["Three.js", "React", "WebGL"],
-    desc: "Interactive 3D product viewer with real-time material swapping and AR support.",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80",
-    link: "#",
-    color: "#3498db",
-  },
-  {
-    num: "05",
-    title: "AI Writing Tool",
-    tags: ["Next.js", "OpenAI API", "Prisma"],
-    desc: "Document editor with AI completions, real-time collaboration, and version history.",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
-    link: "#",
-    color: "#e74c3c",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Work() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -98,12 +47,15 @@ export default function Work() {
       <div className="divide-y divide-steel">
         {projects.map((project, i) => (
           <div
-            key={project.num}
+            key={project.id}
             className="work-item reveal-item opacity-0 group py-6 md:py-8"
             onMouseEnter={() => setHoveredIdx(i)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
-            <a href={project.link} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-0">
+            <Link
+              href={`/work/${project.id}`}
+              className="flex flex-col md:flex-row md:items-center gap-4 md:gap-0"
+            >
               {/* Number */}
               <span className="work-num font-mono text-xs text-fog transition-colors duration-300 md:w-16 flex-shrink-0">
                 {project.num}
@@ -138,7 +90,7 @@ export default function Work() {
                   ↗
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Hover preview image (mobile hidden) */}
             {hoveredIdx === i && (
