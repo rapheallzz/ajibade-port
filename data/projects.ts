@@ -86,7 +86,7 @@ export const projects: Project[] = [
     ],
     year: "2024",
     img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80",
-    link: "#",
+    link: "https://3d-product-ten.vercel.app/",
     color: "#3498db",
   },
   {
