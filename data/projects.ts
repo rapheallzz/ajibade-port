@@ -146,6 +146,25 @@ export const projects: Project[] = [
     link: "https://gobokin.com/",
     color: "#2ecc71",
   },
+  {
+    id: "08",
+    num: "08",
+    title: "B2B Application",
+    tags: ["React", "TypeScript", "Enterprise", "B2B"],
+    desc: "Enterprise event and business management portal streamlining multi-tier workflows and real-time operations.",
+    fullDesc:
+      "A specialized B2B event management platform engineered to connect enterprises, event coordinators, and business stakeholders. Delivers robust scheduling, attendee workflows, transaction management, and automated event analytics.",
+    features: [
+      "Enterprise event management and workflow automation",
+      "Multi-tier access management and stakeholder portals",
+      "Real-time schedule tracking and guest coordination",
+      "Integrated analytics and transaction reporting",
+    ],
+    year: "2025",
+    img: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
+    link: "https://event.gobokin.com",
+    color: "#34495e",
+  },
 ];
 
 export function getProjectById(id: string): Project | undefined {
