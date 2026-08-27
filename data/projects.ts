@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Seamless content navigation and quick search",
     ],
     year: "2025",
-    img: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=800&q=80",
     link: "https://www.playmoodtv.com",
     color: "#1abc9c",
   },
@@ -143,7 +143,7 @@ export const projects: Project[] = [
     ],
     year: "2025",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    link: "https://www.gobokin.com",
+    link: "https://gobokin.com/",
     color: "#2ecc71",
   },
 ];
