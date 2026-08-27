@@ -24,24 +24,36 @@ export default function Hero() {
       ref={heroRef}
       className="relative min-h-screen grid-bg flex flex-col justify-end pb-16 px-6 md:px-10 pt-32"
     >
-      {/* Top-right status pill */}
-      <div className="absolute top-24 right-6 md:right-10 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-        <span className="font-mono text-xs text-fog uppercase tracking-widest">
-          Available Worldwide
-        </span>
-      </div>
+      {/* Top-right section: Name & Download CV button */}
+      <div className="absolute top-24 right-6 md:right-10 flex flex-col items-end gap-3 text-right z-10">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <span className="font-mono text-xs text-fog uppercase tracking-widest">
+            Available Worldwide
+          </span>
+        </div>
 
-      {/* Prominent Name Header */}
-      <div className="mb-4">
-        <span className="opacity-0-init anim-in inline-block font-mono text-xs md:text-sm text-accent uppercase tracking-widest border border-accent/40 bg-accent/10 px-3 py-1 rounded-full mb-3">
+        {/* Prominent Name Header on the Right */}
+        <h2 className="opacity-0-init anim-in font-display text-2xl md:text-3xl text-bone tracking-tight">
           Stephen A. Ibiotye
-        </span>
+        </h2>
+
+        {/* Download CV button directly underneath the name on the right */}
+        <a
+          href="/cv.pdf"
+          download="Stephen_A_Ibiotye_CV.pdf"
+          className="opacity-0-init anim-in inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-ink font-mono text-xs uppercase tracking-wider font-semibold rounded hover:bg-bone transition-colors duration-300 shadow-md group mt-1"
+        >
+          <span>Download CV</span>
+          <span className="group-hover:translate-y-0.5 transition-transform duration-300">
+            ↓
+          </span>
+        </a>
       </div>
 
       {/* Main headline */}
       <div className="mb-8">
-        <h1 className="font-display text-[clamp(3rem,9vw,8.5rem)] leading-[0.9] text-bone tracking-tight">
+        <h1 className="font-display text-[clamp(3.5rem,11vw,10rem)] leading-[0.9] text-bone tracking-tight">
           <span className="opacity-0-init anim-in block overflow-hidden">
             <span className="block">Frontend</span>
           </span>
@@ -57,25 +69,12 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* Description & Download CV Button */}
+      {/* Description & Scroll to work button */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <div className="flex flex-col items-start gap-5 max-w-sm">
-          <p className="opacity-0-init anim-in font-sans text-fog text-sm md:text-base leading-relaxed">
-            I build interfaces that people remember — with React, Next.js,
-            TypeScript, and thoughtful motion design.
-          </p>
-
-          <a
-            href="/cv.pdf"
-            download="Stephen_A_Ibiotye_CV.pdf"
-            className="opacity-0-init anim-in inline-flex items-center gap-2 px-6 py-3 bg-accent text-ink font-mono text-xs uppercase tracking-wider font-semibold rounded hover:bg-bone transition-colors duration-300 shadow-md group"
-          >
-            <span>Download CV</span>
-            <span className="group-hover:translate-y-0.5 transition-transform duration-300">
-              ↓
-            </span>
-          </a>
-        </div>
+        <p className="opacity-0-init anim-in font-sans text-fog text-sm md:text-base max-w-xs leading-relaxed">
+          I build interfaces that people remember — with React, Next.js,
+          TypeScript, and thoughtful motion design.
+        </p>
 
         <button
           onClick={scrollToWork}
