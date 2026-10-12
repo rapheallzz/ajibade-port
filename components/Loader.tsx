@@ -25,7 +25,17 @@ export default function Loader({
         }, 300);
       }
     }, 140);
-    return () => clearInterval(tick);
+
+    // Timeout fallback (2.5s) to ensure loader never blocks the content indefinitely
+    const fallbackTimeout = setTimeout(() => {
+      setDone(true);
+      onComplete();
+    }, 2500);
+
+    return () => {
+      clearInterval(tick);
+      clearTimeout(fallbackTimeout);
+    };
   }, [onComplete]);
 
   return (
@@ -34,8 +44,17 @@ export default function Loader({
         done ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      <div className="font-mono text-xs text-fog tracking-widest uppercase">
-        Loading
+      <div className="flex items-center justify-between font-mono text-xs text-fog tracking-widest uppercase">
+        <span>Loading</span>
+        <button
+          onClick={() => {
+            setDone(true);
+            onComplete();
+          }}
+          className="hover:text-accent transition-colors duration-300 underline underline-offset-2"
+        >
+          Skip Intro
+        </button>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -52,7 +71,7 @@ export default function Loader({
       </div>
 
       <div className="font-mono text-xs text-fog tracking-widest uppercase">
-        Stephen A. Ibiotye — Portfolio
+        Stephen A. Ibitoye — Portfolio
       </div>
     </div>
   );

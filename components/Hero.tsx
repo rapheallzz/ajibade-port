@@ -35,16 +35,19 @@ export default function Hero() {
 
         {/* Prominent Name Header on the Right */}
         <h2 className="opacity-0-init anim-in font-display text-2xl md:text-3xl text-bone tracking-tight">
-          Stephen A. Ibiotye
+          Stephen A. Ibitoye
         </h2>
 
         {/* Download CV button directly underneath the name on the right */}
+        {/* TODO(stephen): replace public/cv.pdf with latest CV */}
         <a
           href="/cv.pdf"
-          download="Stephen_A_Ibiotye_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          download="Stephen_A_Ibitoye_CV.pdf"
           className="opacity-0-init anim-in inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-ink font-mono text-xs uppercase tracking-wider font-semibold rounded hover:bg-bone transition-colors duration-300 shadow-md group mt-1"
         >
-          <span>Download CV</span>
+          <span>Download CV (PDF)</span>
           <span className="group-hover:translate-y-0.5 transition-transform duration-300">
             ↓
           </span>
@@ -55,15 +58,15 @@ export default function Hero() {
       <div className="mb-8">
         <h1 className="font-display text-[clamp(3.5rem,11vw,10rem)] leading-[0.9] text-bone tracking-tight">
           <span className="opacity-0-init anim-in block overflow-hidden">
-            <span className="block">Frontend</span>
+            <span className="block">Full-Stack</span>
           </span>
           <span className="opacity-0-init anim-in block overflow-hidden">
-            <span className="block italic text-fog">Developer</span>
+            <span className="block italic text-fog">JavaScript</span>
           </span>
           <span className="opacity-0-init anim-in flex items-end gap-6">
             <span>&amp;</span>
             <span className="text-accent text-[clamp(1.2rem,3vw,2.5rem)] font-sans font-light mb-2 tracking-wide">
-              UI Engineer
+              UI/UX Engineer
             </span>
           </span>
         </h1>
@@ -71,9 +74,9 @@ export default function Hero() {
 
       {/* Description & Scroll to work button */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-        <p className="opacity-0-init anim-in font-sans text-fog text-sm md:text-base max-w-xs leading-relaxed">
-          I build interfaces that people remember — with React, Next.js,
-          TypeScript, and thoughtful motion design.
+        <p className="opacity-0-init anim-in font-sans text-fog text-sm md:text-base max-w-sm leading-relaxed">
+          6+ years of experience building fast, accessible, production-ready web products
+          with React, Next.js, TypeScript, and thoughtful UI/UX design.
         </p>
 
         <button

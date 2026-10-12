@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 
-const navLinks = ["work", "about", "contact"];
+const navLinks = ["work", "about", "experience", "contact"];
+const mainEmail = "jibzzade@gmail.com";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function Nav() {
           onClick={() => scrollTo("hero")}
           className="font-display text-bone text-xl tracking-tight hover:text-accent transition-colors duration-300"
         >
-          Stephen A. Ibiotye
+          Stephen A. Ibitoye
         </button>
 
         {/* Desktop links */}
@@ -49,7 +50,7 @@ export default function Nav() {
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="font-mono text-xs text-fog uppercase tracking-widest hover:text-accent transition-colors duration-300"
+              className="font-mono text-xs text-fog uppercase tracking-widest hover:text-accent transition-colors duration-300 capitalize"
             >
               {link}
             </button>
@@ -60,7 +61,7 @@ export default function Nav() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 group"
-          aria-label="Menu"
+          aria-label="Toggle Navigation Menu"
         >
           <span
             className={`block w-6 h-px bg-bone transition-all duration-300 ${
@@ -95,7 +96,7 @@ export default function Nav() {
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className={`text-left font-display text-[clamp(3rem,10vw,7rem)] leading-none text-bone hover:text-accent transition-all duration-300 ${
+              className={`text-left font-display text-[clamp(2.5rem,8vw,6rem)] leading-none text-bone hover:text-accent transition-all duration-300 capitalize ${
                 menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
@@ -116,19 +117,17 @@ export default function Nav() {
             <p className="font-mono text-xs text-fog uppercase tracking-widest mb-3">
               Availability
             </p>
-            <p className="font-sans text-sm text-accent">Open to work</p>
+            <p className="font-sans text-sm text-accent">Open to full-time &amp; remote</p>
           </div>
           <div>
             <p className="font-mono text-xs text-fog uppercase tracking-widest mb-3">
               Email
             </p>
             <button
-              onClick={() =>
-                copyEmail("rightsortace@gmail.com", "email")
-              }
+              onClick={() => copyEmail(mainEmail, "email")}
               className="font-sans text-sm text-cloud hover:text-accent transition-colors duration-300"
             >
-              {copied === "email" ? "Copied!" : "rightsortace@gmail.com"}
+              {copied === "email" ? "Copied!" : mainEmail}
             </button>
           </div>
         </div>

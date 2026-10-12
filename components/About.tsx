@@ -3,21 +3,12 @@
 import { useEffect, useRef } from "react";
 
 const services = [
-  "UI Engineering",
-  "Design Systems",
-  "Motion & Animation",
-  "Performance Optimisation",
-  "API Integration",
-  "Responsive Design",
-];
-
-const clients = [
-  "Startup A",
-  "Agency B",
-  "SaaS Platform C",
-  "E-commerce D",
-  "FinTech E",
-  "Media Brand F",
+  "Full-Stack Development",
+  "UI/UX Design & Systems",
+  "React & Next.js Architecture",
+  "API Development (Node.js/Express)",
+  "Motion & Interaction Design",
+  "Performance & Accessibility",
 ];
 
 export default function About() {
@@ -56,77 +47,67 @@ export default function About() {
           About
         </h2>
         <span className="font-mono text-xs text-fog uppercase tracking-widest">
-          est. 2019
+          6+ Years Experience
         </span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        {/* Left: bio */}
+        {/* Left: bio & background */}
         <div>
           <p
             className="about-reveal font-display text-[clamp(1.4rem,2.5vw,1.9rem)] text-bone leading-snug mb-8 transition-all duration-700"
             style={{ opacity: 0, transform: "translateY(20px)" }}
           >
-            I help brands and startups{" "}
-            <em className="text-fog not-italic">tell their story</em> through
-            interfaces built with precision and craft.
+            I build fast, accessible, <em className="text-fog not-italic">production-ready web products</em> that scale.
           </p>
 
           <p
             className="about-reveal font-sans text-sm text-fog leading-relaxed mb-6 max-w-md transition-all duration-700"
             style={{ opacity: 0, transform: "translateY(20px)" }}
           >
-            With 5+ years of experience across agencies and product teams, I
-            bridge the gap between design and engineering — turning Figma frames
-            into pixel-perfect, performant, and accessible web experiences.
+            With 6+ years of professional web development experience, I have shipped web platforms for international remote teams in Spain (Barril Enterprises), built AI-powered applications leveraging the OpenAI API, and taught programming and UI/UX to students preparing for international robotics competitions.
           </p>
+
+          <div
+            className="about-reveal border-l-2 border-accent/40 pl-4 my-8 transition-all duration-700"
+            style={{ opacity: 0, transform: "translateY(20px)" }}
+          >
+            <p className="font-mono text-xs text-accent uppercase tracking-widest mb-2">
+              Background &amp; Training
+            </p>
+            <p className="font-sans text-xs text-fog leading-relaxed">
+              Rooted in graphic design since 2015, I formalised my product design skills through UX Design Fundamentals (CalArts via Coursera). This hybrid background allows me to bridge complex design systems with clean, performant TypeScript and React architectures.
+            </p>
+          </div>
 
           <p
             className="about-reveal font-sans text-sm text-fog leading-relaxed max-w-md transition-all duration-700"
             style={{ opacity: 0, transform: "translateY(20px)" }}
           >
-            I care deeply about details: the spring on a hover, the stagger on a
-            list reveal, the 2ms difference in perceived load time. Great frontend
-            is invisible — you feel it before you see it.
+            I focus on engineering excellence: robust component design, seamless API integrations, micro-interactions, and high performance that feels effortless to the user.
           </p>
         </div>
 
-        {/* Right: services + clients */}
+        {/* Right: services */}
         <div className="flex flex-col gap-12">
           <div
             className="about-reveal transition-all duration-700"
             style={{ opacity: 0, transform: "translateY(20px)" }}
           >
             <p className="font-mono text-xs text-fog uppercase tracking-widest mb-5">
-              Services
+              Core Capabilities
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {services.map((s) => (
                 <li
                   key={s}
-                  className="flex items-center gap-3 font-sans text-sm text-cloud"
+                  className="flex items-center gap-3 font-sans text-sm text-cloud border-b border-steel/30 pb-2"
                 >
                   <span className="text-accent text-xs">—</span>
                   {s}
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div
-            className="about-reveal transition-all duration-700"
-            style={{ opacity: 0, transform: "translateY(20px)" }}
-          >
-            <p className="font-mono text-xs text-fog uppercase tracking-widest mb-5">
-              Clients &amp; Brands
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {clients.map((c) => (
-                <span key={c} className="font-sans text-sm text-fog">
-                  {c}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

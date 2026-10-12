@@ -2,19 +2,15 @@
 
 import { useState } from "react";
 
-const contacts = [
-  { label: "Projects", email: "rightsortace@gmail.com" },
-  { label: "Freelance", email: "rightsortace@gmail.com" },
-  { label: "General", email: "rightsortace@gmail.com" },
-];
+const mainEmail = "jibzzade@gmail.com";
 
 export default function Contact() {
-  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+  const [copied, setCopied] = useState(false);
 
-  const copy = (email: string, idx: number) => {
-    navigator.clipboard.writeText(email);
-    setCopiedIdx(idx);
-    setTimeout(() => setCopiedIdx(null), 2000);
+  const copy = () => {
+    navigator.clipboard.writeText(mainEmail);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -28,63 +24,99 @@ export default function Contact() {
         </h2>
         <span className="font-mono text-xs text-accent uppercase tracking-widest flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-          Open to work
+          Open to full-time &amp; remote roles
         </span>
       </div>
 
       {/* CTA */}
-      <div className="mb-20">
-        <h3 className="font-display text-[clamp(2.5rem,7vw,6rem)] text-bone leading-none mb-6">
-          Let&apos;s build your vision
+      <div className="mb-16">
+        <h3 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] text-bone leading-none mb-6">
+          Open to full-time and remote roles
         </h3>
-        <p className="font-sans text-fog text-sm max-w-sm">
-          Have a project in mind? Drop me a line and let&apos;s talk about how
-          I can help bring it to life.
+        <p className="font-sans text-fog text-sm md:text-base max-w-xl leading-relaxed">
+          I build fast, accessible, production-ready products with React, Next.js, and TypeScript, and am available worldwide. Whether you are hiring for a full-time position or a remote engineering role, let&apos;s connect.
         </p>
       </div>
 
-      {/* Email list */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-steel border border-steel mb-16">
-        {contacts.map((c, i) => (
+      {/* Primary Contact Options */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        {/* Email Copy Card */}
+        <div className="border border-steel p-8 flex flex-col justify-between gap-6 hover:border-accent/40 transition-colors duration-300 bg-ink/40">
+          <div>
+            <span className="font-mono text-xs text-fog uppercase tracking-widest block mb-2">
+              Direct Contact
+            </span>
+            <span className="font-sans text-lg text-bone font-medium block">
+              {mainEmail}
+            </span>
+          </div>
           <button
-            key={c.label}
-            onClick={() => copy(c.email, i)}
-            className="group flex flex-col gap-2 p-6 text-left hover:bg-mist transition-colors duration-300"
+            onClick={copy}
+            className="self-start font-mono text-xs text-accent uppercase tracking-wider border border-accent/30 px-4 py-2 hover:bg-accent hover:text-ink transition-colors duration-300"
           >
-            <span className="font-mono text-xs text-fog uppercase tracking-widest">
-              {c.label}
-            </span>
-            <span className="font-sans text-sm text-cloud group-hover:text-accent transition-colors duration-300">
-              {copiedIdx === i ? "Copied ✓" : c.email}
-            </span>
+            {copied ? "Copied to Clipboard ✓" : "Copy Email Address"}
           </button>
-        ))}
+        </div>
+
+        {/* Hire Me Mailto Card */}
+        <div className="border border-steel p-8 flex flex-col justify-between gap-6 hover:border-accent/40 transition-colors duration-300 bg-ink/40">
+          <div>
+            <span className="font-mono text-xs text-fog uppercase tracking-widest block mb-2">
+              Get In Touch
+            </span>
+            <span className="font-sans text-lg text-bone font-medium block">
+              Send an Inquiry
+            </span>
+          </div>
+          <a
+            href={`mailto:${mainEmail}?subject=Opportunity%20for%20Stephen%20Ibitoye`}
+            className="self-start font-mono text-xs uppercase tracking-wider bg-accent text-ink px-6 py-2.5 font-semibold hover:bg-bone transition-colors duration-300 inline-flex items-center gap-2"
+          >
+            <span>Hire me</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
 
-      {/* Social links */}
-      <div className="flex flex-wrap gap-6">
-        {[
-          {
-            label: "Fiverr",
-            href: "https://www.fiverr.com/rightsort/code-or-design-your-business-website-from-scratch?ref_ctx_id=ece88dfc1b4b4a68bdb02a4ee20bc6c6&pckg_id=1&source=seller_page",
-          },
-          { label: "GitHub", href: "https://github.com" },
-          { label: "LinkedIn", href: "https://linkedin.com" },
-          { label: "Twitter / X", href: "https://twitter.com" },
-        ].map((s) => (
+      {/* Social and Secondary Links */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-steel">
+        <div className="flex flex-wrap items-center gap-6">
           <a
-            key={s.label}
-            href={s.href}
+            href="https://github.com/rapheallzz"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="font-mono text-xs text-fog uppercase tracking-widest hover:text-accent transition-colors duration-300 group flex items-center gap-2"
           >
-            {s.label}
+            GitHub
             <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
               ↗
             </span>
           </a>
-        ))}
+          <a
+            href="https://linkedin.com/in/stephen-ibitoye-238962175"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-fog uppercase tracking-widest hover:text-accent transition-colors duration-300 group flex items-center gap-2"
+          >
+            LinkedIn
+            <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
+              ↗
+            </span>
+          </a>
+        </div>
+
+        {/* Secondary Freelance Link */}
+        <div className="flex items-center gap-2 text-xs font-mono text-steel">
+          <span>Freelance work:</span>
+          <a
+            href="https://www.fiverr.com/rightsort/code-or-design-your-business-website-from-scratch?ref_ctx_id=ece88dfc1b4b4a68bdb02a4ee20bc6c6&pckg_id=1&source=seller_page"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fog hover:text-accent transition-colors duration-300 underline underline-offset-2 flex items-center gap-1"
+          >
+            Fiverr Profile ↗
+          </a>
+        </div>
       </div>
     </section>
   );

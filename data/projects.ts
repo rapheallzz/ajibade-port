@@ -8,8 +8,15 @@ export interface Project {
   features: string[];
   year: string;
   img: string;
-  link: string;
+  link: string; // legacy fallback link
   color: string;
+  role?: string;
+  liveUrl?: string;
+  repoUrl?: string;
+  problem?: string;
+  solution?: string;
+  results?: string;
+  stack?: string[];
 }
 
 export const projects: Project[] = [
@@ -31,6 +38,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     link: "https://gobokin.com/",
     color: "#2ecc71",
+    role: "Frontend Developer",
+    liveUrl: "https://gobokin.com",
+    stack: ["React", "TypeScript", "Tailwind CSS", "REST API"],
+    problem:
+      "Event managers and venues struggled with fragmented platforms for ticketing, seating, and check-ins, creating operational friction and poor user booking experiences.",
+    solution:
+      "Engineered an intuitive, high-performance web platform in React and TypeScript that unifies real-time venue booking, seating selection, ticket generation, and automated check-ins.",
+    results:
+      "Streamlined event operations and venue booking into a single unified dashboard with real-time updates.",
   },
   {
     id: "02",
@@ -50,6 +66,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=800&q=80",
     link: "https://www.playmoodtv.com",
     color: "#1abc9c",
+    role: "Frontend Developer",
+    liveUrl: "https://www.playmoodtv.com",
+    stack: ["React", "Vite", "Node.js", "Tailwind CSS"],
+    problem:
+      "Standard video curation platforms lacked interactive responsiveness and seamless playlist navigation across low-bandwidth mobile environments.",
+    solution:
+      "Developed a custom video streaming UI using React and Vite, optimizing media rendering and dynamic playlist state management for low-latency playback.",
+    results:
+      "Delivered a fluid media streaming application with instant channel switching and responsive UI across all screen sizes.",
   },
   {
     id: "03",
@@ -69,6 +94,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
     link: "https://event.gobokin.com",
     color: "#34495e",
+    role: "Full-Stack Developer",
+    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    problem:
+      "Corporate event organizers required multi-tiered access control, bulk ticketing, and real-time partner registration portals that standard consumer ticketing apps could not accommodate.",
+    solution:
+      "Architected a scalable Next.js portal featuring role-based corporate access control, interactive event schedules, and bulk ticket management.",
+    results:
+      "Provided enterprise clients with dedicated corporate event management and real-time attendance analytics.",
   },
   {
     id: "04",
@@ -88,16 +122,27 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80",
     link: "https://stephinomart.vercel.app/",
     color: "#c8f542",
+    role: "Full-Stack Developer",
+    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
+    stack: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+    problem:
+      "E-commerce storefronts frequently suffer from laggy cart interactions and complex, multi-step checkout friction.",
+    solution:
+      "Built a modern Next.js e-commerce app with state-persisted shopping carts, optimized product filters, and direct Stripe payment gateway integration.",
+    results:
+      "Delivered a fast shopping flow with persistent cart state and secure transaction processing.",
   },
   {
     id: "05",
     num: "05",
+    // TODO(stephen): verify numeric claim "60+ animated components"
     title: "Motion Design System",
     tags: ["React", "Framer Motion", "Storybook"],
     desc: "A component library with 60+ animated components and comprehensive design tokens.",
     fullDesc:
       "A comprehensive design system and UI library focused on micro-interactions and smooth user animations. Engineered with Framer Motion and React to provide modular, reusable, accessible components for scalable web design.",
     features: [
+      // TODO(stephen): verify numeric claim "60+ pre-built accessible animated components"
       "60+ pre-built accessible animated components",
       "Comprehensive design token ecosystem",
       "Storybook documentation and interactive playground",
@@ -107,6 +152,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     link: "https://motion-design-system-b5sm.vercel.app/",
     color: "#f5a623",
+    role: "UI/UX & Frontend Engineer",
+    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
+    stack: ["React", "Framer Motion", "Storybook", "Tailwind CSS"],
+    problem:
+      "Development teams struggle with inconsistent motion design and uncoordinated micro-interactions across large product suites.",
+    solution:
+      "Engineered an accessible design system with customizable animation primitives, design tokens, and interactive Storybook documentation.",
+    results:
+      "Standardized UI motion guidelines and component usage for cohesive web interfaces.",
   },
   {
     id: "06",
@@ -126,6 +180,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80",
     link: "https://3d-product-ten.vercel.app/",
     color: "#3498db",
+    role: "Frontend Engineer",
+    liveUrl: "https://3d-product-ten.vercel.app",
+    stack: ["Three.js", "React", "WebGL", "Tailwind CSS"],
+    problem:
+      "Static product images fail to showcase product details and dynamic material options effectively.",
+    solution:
+      "Created an interactive 3D WebGL configurator using Three.js and React, allowing users to rotate, inspect, and swap materials in real time.",
+    results:
+      "Enabled photorealistic 3D product inspection directly within web browsers without heavy engine overhead.",
   },
   {
     id: "07",
@@ -145,10 +208,20 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
     link: "https://aiwriter-sandy.vercel.app/",
     color: "#e74c3c",
+    role: "Full-Stack Developer",
+    liveUrl: "https://aiwriter-sandy.vercel.app",
+    stack: ["Next.js", "OpenAI API", "Prisma", "Tailwind CSS"],
+    problem:
+      "Content creators spend excessive time switching between external AI tools and primary document drafting editors.",
+    solution:
+      "Integrated OpenAI API completions directly inside a rich-text Next.js document editor with context-aware rewriting and tone adjustment options.",
+    results:
+      "Accelerated document creation with inline AI writing suggestions and Markdown exports.",
   },
   {
     id: "08",
     num: "08",
+    // TODO(stephen): verify numeric claims "1M+ events" and "60fps"
     title: "Analytics Dashboard",
     tags: ["React", "D3.js", "TailwindCSS"],
     desc: "Real-time data visualisation platform processing 1M+ events with smooth 60fps charts.",
@@ -156,6 +229,7 @@ export const projects: Project[] = [
       "Enterprise analytics dashboard designed to visualize massive data streams in real time. Features interactive D3.js charting, custom date range filtering, export capabilities, and dark mode UI optimization.",
     features: [
       "Real-time data streaming and aggregation",
+      // TODO(stephen): verify numeric claim "60fps smooth rendering"
       "Custom D3.js charts with 60fps smooth rendering",
       "Customizable widgets and view layouts",
       "Exportable CSV/PDF reporting capabilities",
@@ -164,6 +238,15 @@ export const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     link: "#",
     color: "#9b59b6",
+    role: "Frontend Developer",
+    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
+    stack: ["React", "D3.js", "Tailwind CSS"],
+    problem:
+      "High-density data streams frequently cause web browser UI freezes and rendering lag during real-time updates.",
+    solution:
+      "Optimized D3.js chart rendering routines and data aggregation pipes in React for smooth, non-blocking visualization.",
+    results:
+      "Provided an interactive real-time dashboard for visual analytics and data export.",
   },
 ];
 
