@@ -59,10 +59,18 @@ export default function ProjectPage({
 
         {/* Title & Metadata Header */}
         <header className="border-b border-steel pb-10 mb-12">
-          <div className="flex items-center gap-3 font-mono text-xs text-accent uppercase tracking-widest mb-4">
+          <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-accent uppercase tracking-widest mb-4">
             <span>Project {project.num}</span>
             <span>/</span>
             <span>{project.year}</span>
+            {project.type === "Self-initiated" && (
+              <>
+                <span>/</span>
+                <span className="border border-accent/40 bg-accent/10 text-accent px-2 py-0.5 rounded-sm text-[10px] lowercase tracking-normal font-sans">
+                  Self-initiated project
+                </span>
+              </>
+            )}
           </div>
 
           <h1 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] text-bone leading-none mb-6">
@@ -114,7 +122,7 @@ export default function ProjectPage({
             )}
           </div>
 
-          {/* Action Buttons (Rendered ONLY when URLs exist) */}
+          {/* Action Buttons */}
           {(project.liveUrl || project.repoUrl) && (
             <div className="flex flex-wrap items-center gap-4 mt-8">
               {project.liveUrl && (
@@ -159,44 +167,39 @@ export default function ProjectPage({
           />
         </div>
 
-        {/* Overview & Core Features */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 border-b border-steel pb-16">
-          <div className="lg:col-span-5">
+        {/* Overview Description */}
+        {project.fullDesc && (
+          <section className="mb-16 border-b border-steel pb-12">
             <h2 className="font-mono text-xs text-fog uppercase tracking-widest mb-4">
               Overview
             </h2>
-            <p className="font-sans text-sm md:text-base text-cloud leading-relaxed">
+            <p className="font-sans text-sm md:text-base text-cloud leading-relaxed max-w-3xl">
               {project.fullDesc}
             </p>
-          </div>
+          </section>
+        )}
 
-          {project.features && project.features.length > 0 && (
-            <div className="lg:col-span-7">
-              <h2 className="font-mono text-xs text-fog uppercase tracking-widest mb-4">
-                Key Features
-              </h2>
-              <ul className="space-y-3">
-                {project.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-start gap-3 font-sans text-sm text-cloud/90 border-b border-steel/30 pb-2"
-                  >
-                    <span className="text-accent text-xs select-none">✦</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </section>
+        {/* Scenario, Problem, Solution & Results */}
+        {(project.scenario ||
+          project.problem ||
+          project.solution ||
+          project.results) && (
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 border-b border-steel pb-16">
+            {project.scenario && (
+              <div className="border border-steel p-6 bg-ash/30">
+                <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">
+                  01 / Scenario
+                </h3>
+                <p className="font-sans text-sm text-fog leading-relaxed">
+                  {project.scenario}
+                </p>
+              </div>
+            )}
 
-        {/* Problem, Solution & Results */}
-        {(project.problem || project.solution || project.results) && (
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 border-b border-steel pb-16">
             {project.problem && (
               <div className="border border-steel p-6 bg-ash/30">
                 <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-                  01 / Problem
+                  02 / Problem
                 </h3>
                 <p className="font-sans text-sm text-fog leading-relaxed">
                   {project.problem}
@@ -207,7 +210,7 @@ export default function ProjectPage({
             {project.solution && (
               <div className="border border-steel p-6 bg-ash/30">
                 <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-                  02 / Solution
+                  03 / Solution
                 </h3>
                 <p className="font-sans text-sm text-fog leading-relaxed">
                   {project.solution}
@@ -218,7 +221,7 @@ export default function ProjectPage({
             {project.results && (
               <div className="border border-steel p-6 bg-ash/30">
                 <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-                  03 / Impact &amp; Results
+                  04 / Impact &amp; Results
                 </h3>
                 <p className="font-sans text-sm text-fog leading-relaxed">
                   {project.results}

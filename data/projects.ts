@@ -2,21 +2,23 @@ export interface Project {
   id: string;
   num: string;
   title: string;
+  type: "Production" | "Self-initiated";
   tags: string[];
-  desc: string;
-  fullDesc: string;
-  features: string[];
+  desc: string; // One-line overview for homepage grid
+  fullDesc: string; // Overview description
   year: string;
   img: string;
   link: string; // legacy fallback link
   color: string;
-  role?: string;
+  role: string;
   liveUrl?: string;
   repoUrl?: string;
+  scenario?: string;
   problem?: string;
   solution?: string;
   results?: string;
   stack?: string[];
+  features?: string[];
 }
 
 export const projects: Project[] = [
@@ -24,201 +26,147 @@ export const projects: Project[] = [
     id: "01",
     num: "01",
     title: "Gobokin",
-    tags: ["React", "TypeScript", "Ticketing", "Venue Booking"],
-    desc: "All-in-one platform to book venues, sell tickets, reserve spaces, and manage event operations seamlessly.",
+    type: "Production",
+    role: "Frontend Developer",
+    tags: ["React", "TypeScript", "Next.js"],
+    desc: "All-in-one venue search, booking, and event ticketing platform.",
     fullDesc:
-      "Gobokin is an end-to-end event and venue ticketing solution. It empowers organizers and venues to manage space reservations, market event tickets, process secure payments, and streamline attendee check-ins—all within a unified, modern web ecosystem.",
-    features: [
-      "Comprehensive venue reservation and management system",
-      "Digital ticketing sales and instant automated delivery",
-      "Real-time seating and venue availability tracking",
-      "Integrated secure payment processing and reporting analytics",
-    ],
+      "All-in-one web platform enabling users in Nigeria to discover venues, compare prices and dates, and book or sell tickets securely.",
     year: "2025",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    link: "https://gobokin.com/",
+    link: "https://www.gobokin.com",
     color: "#2ecc71",
-    role: "Frontend Developer",
-    liveUrl: "https://gobokin.com",
-    stack: ["React", "TypeScript", "Tailwind CSS", "REST API"],
+    liveUrl: "https://www.gobokin.com",
+    stack: ["React", "TypeScript", "Next.js"],
+    scenario:
+      "Planning an event in Nigeria often means calling venue owners and negotiating over WhatsApp, while organizers sell tickets through bank transfers and screenshots.",
     problem:
-      "Event managers and venues struggled with fragmented platforms for ticketing, seating, and check-ins, creating operational friction and poor user booking experiences.",
+      "There was no single place to discover venues, compare them on price, date and capacity, and book or sell tickets securely.",
     solution:
-      "Engineered an intuitive, high-performance web platform in React and TypeScript that unifies real-time venue booking, seating selection, ticket generation, and automated check-ins.",
+      "Built the web platform with venue search by location, price range, date and guest capacity, a separate event portal for discovery and ticketing, and a listing flow for hosts.",
     results:
-      "Streamlined event operations and venue booking into a single unified dashboard with real-time updates.",
+      "The platform has 100+ venues listed, 200 events hosted and 1,000+ visitors, and is live in production.",
   },
   {
     id: "02",
     num: "02",
-    title: "Playmoodtv",
-    tags: ["React", "Vite", "Media Streaming", "UI/UX"],
-    desc: "Next-generation interactive media streaming platform delivering curated channels and video experiences.",
+    title: "PlaymoodTV",
+    type: "Production",
+    role: "Frontend Developer at Barril Enterprises",
+    tags: ["React", "Vite", "Node.js REST"],
+    desc: "Interactive media streaming platform with custom creator channels and live feeds.",
     fullDesc:
-      "Playmoodtv is a sleek, modern streaming platform built for high-performance media delivery and interactive video curation. Designed with a custom media engine and dynamic playlists, it delivers seamless entertainment across devices.",
-    features: [
-      "High-definition video playback with custom streaming controls",
-      "Curated channel discovery and automated playlist creation",
-      "Ultra-responsive aesthetic user interface built for mobile and desktop",
-      "Fast asset loading and optimized content rendering pipeline",
-    ],
+      "Next-generation media streaming application built on top of existing Node.js REST services.",
     year: "2025",
     img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=800&q=80",
     link: "https://www.playmoodtv.com",
     color: "#1abc9c",
-    role: "Frontend Developer",
     liveUrl: "https://www.playmoodtv.com",
-    stack: ["React", "Vite", "Node.js", "Tailwind CSS"],
+    stack: ["React", "Vite", "Node.js REST"],
+    scenario:
+      "Viewers expect streaming to feel instant on any device, with no friction between picking something and watching it.",
     problem:
-      "Standard video curation platforms lacked interactive responsiveness and seamless playlist navigation across low-bandwidth mobile environments.",
+      "The platform needed a polished front end that turned complex design files into a fast, consistent interface on top of existing backend services.",
     solution:
-      "Developed a custom video streaming UI using React and Vite, optimizing media rendering and dynamic playlist state management for low-latency playback.",
-    results:
-      "Delivered a fluid media streaming application with instant channel switching and responsive UI across all screen sizes.",
+      "Converted designs into React and Vite interfaces and integrated them with Node.js REST services, working across time zones with designers and backend engineers. Built authentication, a creator dashboard, creator channels, content sliders, live feeds and content highlights.",
+    results: "Shipped to production.",
   },
   {
     id: "03",
     num: "03",
-    title: "E-Commerce Platform",
+    title: "Fieldwork E-Commerce",
+    type: "Self-initiated",
+    role: "Full-Stack Developer",
     tags: ["Next.js", "TypeScript", "Stripe"],
-    desc: "Full-stack storefront with real-time inventory, cart animations, and seamless checkout.",
+    desc: "Full-stack storefront with real-time inventory, cart animations, and Stripe checkout.",
     fullDesc:
-      "A high-performance full-stack e-commerce application built for high conversion and speed. Features real-time stock management, fluid UI transitions, dynamic product filtering, and an integrated Stripe payment gateway.",
-    features: [
-      "Real-time inventory and stock updates",
-      "Optimized shopping cart with state persistence",
-      "Seamless and secure Stripe checkout integration",
-      "Fully responsive design tuned for mobile commerce",
-    ],
+      "A scarce-stock gear storefront built to show accurate real-time availability and seamless cart interactions.",
     year: "2025",
     img: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80",
-    link: "https://stephinomart.vercel.app/",
+    link: "https://stephinomart.vercel.app",
     color: "#c8f542",
-    role: "Full-Stack Developer",
-    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
-    stack: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+    liveUrl: "https://stephinomart.vercel.app",
+    stack: ["Next.js", "TypeScript", "Stripe"],
+    scenario:
+      "A small-batch outdoor gear brand restocks often and sells limited quantities, so customers must never buy something that is already gone.",
     problem:
-      "E-commerce storefronts frequently suffer from laggy cart interactions and complex, multi-step checkout friction.",
+      "A storefront for scarce stock must show accurate availability and make adding to the cart feel smooth.",
     solution:
-      "Built a modern Next.js e-commerce app with state-persisted shopping carts, optimized product filters, and direct Stripe payment gateway integration.",
-    results:
-      "Delivered a fast shopping flow with persistent cart state and secure transaction processing.",
+      "A full-stack storefront with product detail pages, an animated cart, a low-stock badge, a sold-out state with a disabled button, and Stripe payments in test mode.",
+    results: "A working demo with a complete checkout flow.",
   },
   {
     id: "04",
     num: "04",
-    // TODO(stephen): verify numeric claim "60+ animated components"
-    title: "Motion Design System",
-    tags: ["React", "Framer Motion", "Storybook"],
-    desc: "A component library with 60+ animated components and comprehensive design tokens.",
+    title: "Atlas, 3D Product Configurator",
+    type: "Self-initiated",
+    role: "Frontend Engineer",
+    tags: ["Three.js", "React", "WebGL"],
+    desc: "Real-time 3D product visualizer with instant material swapping and AR support.",
     fullDesc:
-      "A comprehensive design system and UI library focused on micro-interactions and smooth user animations. Engineered with Framer Motion and React to provide modular, reusable, accessible components for scalable web design.",
-    features: [
-      // TODO(stephen): verify numeric claim "60+ pre-built accessible animated components"
-      "60+ pre-built accessible animated components",
-      "Comprehensive design token ecosystem",
-      "Storybook documentation and interactive playground",
-      "Custom animation primitives and layout transition hooks",
-    ],
-    year: "2025",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    link: "https://motion-design-system-b5sm.vercel.app/",
-    color: "#f5a623",
-    role: "UI/UX & Frontend Engineer",
-    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
-    stack: ["React", "Framer Motion", "Storybook", "Tailwind CSS"],
+      "Interactive 3D WebGL viewer allowing customers to rotate products, inspect materials, and view items in AR.",
+    year: "2024",
+    img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80",
+    link: "https://3d-product-ten.vercel.app",
+    color: "#3498db",
+    liveUrl: "https://3d-product-ten.vercel.app",
+    stack: ["Three.js", "React", "WebGL"],
+    scenario:
+      "A small footwear or furniture brand sells online, but photos cannot show every colour and material, so buyers hesitate or return items.",
     problem:
-      "Development teams struggle with inconsistent motion design and uncoordinated micro-interactions across large product suites.",
+      "Customers need to see how a product looks in different finishes before they buy.",
     solution:
-      "Engineered an accessible design system with customizable animation primitives, design tokens, and interactive Storybook documentation.",
-    results:
-      "Standardized UI motion guidelines and component usage for cohesive web interfaces.",
+      "A real-time 3D viewer where users rotate the product and swap materials instantly, with AR support to place it in their own space.",
+    results: "A working live demo.",
   },
   {
     id: "05",
     num: "05",
-    title: "3D Product Configurator",
-    tags: ["Three.js", "React", "WebGL"],
-    desc: "Interactive 3D product viewer with real-time material swapping and AR support.",
+    title: "AI Writer",
+    type: "Self-initiated",
+    role: "Full-Stack Developer",
+    tags: ["Next.js", "OpenAI API", "Prisma"],
+    desc: "Document editor with inline OpenAI completions, real-time collaboration, and version history.",
     fullDesc:
-      "An immersive 3D product visualizer allowing customers to inspect, customize, and preview products in real time using WebGL. Includes dynamic lighting, custom shader materials, and augmented reality preview.",
-    features: [
-      "Real-time photorealistic 3D model rendering",
-      "Dynamic material and texture swapping",
-      "Interactive 360-degree rotation and zoom",
-      "Augmented Reality (AR) mobile inspection mode",
-    ],
+      "An integrated drafting editor unifying context-aware AI completions, document management, and version history.",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80",
-    link: "https://3d-product-ten.vercel.app/",
-    color: "#3498db",
-    role: "Frontend Engineer",
-    liveUrl: "https://3d-product-ten.vercel.app",
-    stack: ["Three.js", "React", "WebGL", "Tailwind CSS"],
+    img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
+    link: "https://aiwriter-sandy.vercel.app",
+    color: "#e74c3c",
+    liveUrl: "https://aiwriter-sandy.vercel.app",
+    stack: ["Next.js", "OpenAI API", "Prisma"],
+    scenario:
+      "A small content team drafts in an editor, copies text to a separate AI chat for rewrites, and pastes it back, losing track of versions.",
     problem:
-      "Static product images fail to showcase product details and dynamic material options effectively.",
+      "AI help sits outside the editor, and collaboration and version control live in separate tools.",
     solution:
-      "Created an interactive 3D WebGL configurator using Three.js and React, allowing users to rotate, inspect, and swap materials in real time.",
-    results:
-      "Enabled photorealistic 3D product inspection directly within web browsers without heavy engine overhead.",
+      "A single editor with AI completions through the OpenAI API, real-time collaboration, and version history stored with Prisma.",
+    results: "A working live demo.",
   },
   {
     id: "06",
     num: "06",
-    title: "AI Writing Tool",
-    tags: ["Next.js", "OpenAI API", "Prisma"],
-    desc: "Document editor with AI completions, real-time collaboration, and version history.",
+    title: "Motion Design System",
+    type: "Self-initiated",
+    role: "UI/UX & Frontend Engineer",
+    tags: ["React", "Framer Motion", "Storybook"],
+    desc: "A unified component library with consistent motion tokens documented in Storybook.",
     fullDesc:
-      "An intelligent document editor empowering creators with real-time AI assistance, content generation, inline editing suggestions, smart rewriting, and seamless export options.",
-    features: [
-      "Context-aware AI auto-completion and generation",
-      "Inline text editing, summarization, and tone shifting",
-      "Rich-text editor with instant Markdown export",
-      "History tracking and document management",
-    ],
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
-    link: "https://aiwriter-sandy.vercel.app/",
-    color: "#e74c3c",
-    role: "Full-Stack Developer",
-    liveUrl: "https://aiwriter-sandy.vercel.app",
-    stack: ["Next.js", "OpenAI API", "Prisma", "Tailwind CSS"],
+      "Shared motion design system featuring reusable components, motion tokens, and interactive Storybook documentation.",
+    year: "2025",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    link: "https://motion-design-system-b5sm.vercel.app",
+    color: "#f5a623",
+    liveUrl: "https://motion-design-system-b5sm.vercel.app",
+    stack: ["React", "Framer Motion", "Storybook"],
+    scenario:
+      "A fast-moving product team has every developer building hover effects and transitions differently, so the app feels inconsistent.",
     problem:
-      "Content creators spend excessive time switching between external AI tools and primary document drafting editors.",
+      "There was no shared set of animation rules or reusable animated components.",
     solution:
-      "Integrated OpenAI API completions directly inside a rich-text Next.js document editor with context-aware rewriting and tone adjustment options.",
-    results:
-      "Accelerated document creation with inline AI writing suggestions and Markdown exports.",
-  },
-  {
-    id: "07",
-    num: "07",
-    // TODO(stephen): verify numeric claims "1M+ events" and "60fps"
-    title: "Analytics Dashboard",
-    tags: ["React", "D3.js", "TailwindCSS"],
-    desc: "Real-time data visualisation platform processing 1M+ events with smooth 60fps charts.",
-    fullDesc:
-      "Enterprise analytics dashboard designed to visualize massive data streams in real time. Features interactive D3.js charting, custom date range filtering, export capabilities, and dark mode UI optimization.",
-    features: [
-      "Real-time data streaming and aggregation",
-      // TODO(stephen): verify numeric claim "60fps smooth rendering"
-      "Custom D3.js charts with 60fps smooth rendering",
-      "Customizable widgets and view layouts",
-      "Exportable CSV/PDF reporting capabilities",
-    ],
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    link: "#",
-    color: "#9b59b6",
-    role: "Frontend Developer",
-    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
-    stack: ["React", "D3.js", "Tailwind CSS"],
-    problem:
-      "High-density data streams frequently cause web browser UI freezes and rendering lag during real-time updates.",
-    solution:
-      "Optimized D3.js chart rendering routines and data aggregation pipes in React for smooth, non-blocking visualization.",
-    results:
-      "Provided an interactive real-time dashboard for visual analytics and data export.",
+      "A component library with consistent motion tokens (timing, easing, springs), documented in a showcase site.",
+    // TODO(stephen): [COUNT NEEDED] Count distinct animated components from source if available.
+    results: "A working live showcase site.",
   },
 ];
 

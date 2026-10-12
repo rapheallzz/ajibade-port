@@ -63,9 +63,16 @@ export default function Work() {
 
               {/* Title + tags */}
               <div className="flex-1 flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
-                <h3 className="font-display text-[clamp(1.4rem,3vw,2rem)] text-bone group-hover:text-accent transition-colors duration-300 leading-tight">
-                  {project.title}
-                </h3>
+                <div className="flex items-center gap-3">
+                  <h3 className="font-display text-[clamp(1.4rem,3vw,2rem)] text-bone group-hover:text-accent transition-colors duration-300 leading-tight">
+                    {project.title}
+                  </h3>
+                  {project.type === "Self-initiated" && (
+                    <span className="font-sans text-[10px] text-accent/80 border border-accent/30 bg-accent/5 px-1.5 py-0.5 rounded-sm">
+                      Self-initiated
+                    </span>
+                  )}
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span

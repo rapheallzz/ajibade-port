@@ -8,6 +8,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/work/07",
+        destination: "/#work",
+        permanent: true,
+      },
+      {
+        source: "/work/08",
+        destination: "/#work",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
