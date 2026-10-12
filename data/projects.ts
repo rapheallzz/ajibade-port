@@ -79,34 +79,6 @@ export const projects: Project[] = [
   {
     id: "03",
     num: "03",
-    title: "B2B Gobokin Event",
-    tags: ["Next.js", "Enterprise", "B2B Portal", "Event Management"],
-    desc: "Enterprise B2B event portal powering business registrations, corporate bookings, and event logistics.",
-    fullDesc:
-      "The B2B Gobokin Event portal is an enterprise-grade extension of the Gobokin network, tailored for corporate organizers, brand partners, and B2B event managers. It streamlines multi-tier attendee ticketing, corporate sponsorship portals, and real-time event management.",
-    features: [
-      "Enterprise event portal with multi-tiered access controls",
-      "Corporate ticketing, bulk invitations, and partner management",
-      "Real-time event schedules and interactive venue listings",
-      "Comprehensive business analytics and guest attendance tracking",
-    ],
-    year: "2025",
-    img: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-    link: "https://event.gobokin.com",
-    color: "#34495e",
-    role: "Full-Stack Developer",
-    // TODO(stephen): add liveUrl, repoUrl, role, and verified results
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    problem:
-      "Corporate event organizers required multi-tiered access control, bulk ticketing, and real-time partner registration portals that standard consumer ticketing apps could not accommodate.",
-    solution:
-      "Architected a scalable Next.js portal featuring role-based corporate access control, interactive event schedules, and bulk ticket management.",
-    results:
-      "Provided enterprise clients with dedicated corporate event management and real-time attendance analytics.",
-  },
-  {
-    id: "04",
-    num: "04",
     title: "E-Commerce Platform",
     tags: ["Next.js", "TypeScript", "Stripe"],
     desc: "Full-stack storefront with real-time inventory, cart animations, and seamless checkout.",
@@ -133,8 +105,8 @@ export const projects: Project[] = [
       "Delivered a fast shopping flow with persistent cart state and secure transaction processing.",
   },
   {
-    id: "05",
-    num: "05",
+    id: "04",
+    num: "04",
     // TODO(stephen): verify numeric claim "60+ animated components"
     title: "Motion Design System",
     tags: ["React", "Framer Motion", "Storybook"],
@@ -163,8 +135,8 @@ export const projects: Project[] = [
       "Standardized UI motion guidelines and component usage for cohesive web interfaces.",
   },
   {
-    id: "06",
-    num: "06",
+    id: "05",
+    num: "05",
     title: "3D Product Configurator",
     tags: ["Three.js", "React", "WebGL"],
     desc: "Interactive 3D product viewer with real-time material swapping and AR support.",
@@ -191,8 +163,8 @@ export const projects: Project[] = [
       "Enabled photorealistic 3D product inspection directly within web browsers without heavy engine overhead.",
   },
   {
-    id: "07",
-    num: "07",
+    id: "06",
+    num: "06",
     title: "AI Writing Tool",
     tags: ["Next.js", "OpenAI API", "Prisma"],
     desc: "Document editor with AI completions, real-time collaboration, and version history.",
@@ -219,8 +191,8 @@ export const projects: Project[] = [
       "Accelerated document creation with inline AI writing suggestions and Markdown exports.",
   },
   {
-    id: "08",
-    num: "08",
+    id: "07",
+    num: "07",
     // TODO(stephen): verify numeric claims "1M+ events" and "60fps"
     title: "Analytics Dashboard",
     tags: ["React", "D3.js", "TailwindCSS"],

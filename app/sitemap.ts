@@ -1,11 +1,11 @@
 import { MetadataRoute } from "next";
+import { projects } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://stephen-frontend-ui.vercel.app";
-  const projectIds = ["01", "02", "03", "04", "05", "06", "07", "08"];
 
-  const projectUrls = projectIds.map((id) => ({
-    url: `${baseUrl}/work/${id}`,
+  const projectUrls = projects.map((project) => ({
+    url: `${baseUrl}/work/${project.id}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
